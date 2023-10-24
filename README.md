@@ -1,5 +1,4 @@
-# TransactionalAop
-
+# Transactional
 project about how transactional annotation works in spring boot auto config @EnableTransactionManagement - spring configuration @Transactional behaves as proxy to create and close the connection behave of database connection class if we are not keeping this, jpa repository or sqltemplate will open the connection for you, where we need to handle teh transaction manually
 Tranactional chain
 1. Transactional(propogation = Propogation.Required) // default if we are not mention anything also wont create new trnx if already exisit with called method
@@ -8,11 +7,14 @@ Tranactional chain
 4. Transactional(propogaton = Propogation.Support) if we keep this in a method. doesnot requires called method to keep the trnx annotation
 5. Transactional(propogation = Propogation.NonSupported) keep the transaction and that particular block of code can execute with out transacton
 6. Transactional(propogation = Propogation.Never)
-AOP framework
+
+   
+# AOP framework
 AOP is used for cross cutting concerns like authentication logging will work independently out of your business logic
 example use loggers
 @EnableAspectJAutoProxy - make the aspect class as a proxy @Aspect - make that class as aspect class @PointCut - "within" "executes" - we will mention the places where we need to include our loggers or authenticaiton layers @Before ("pointcut"), @After, @Around - advices the logic. it has ProceedingJoinPoint processingpoint will have proceed method we can make use of that to check before and after execution
-Logging framework
+
+# Logging framework
 SLF4J interface
 
 Implementation class
